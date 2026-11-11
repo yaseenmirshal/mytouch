@@ -246,7 +246,7 @@ export default function ComingSoon() {
             </span>
 
             <h2 className="mt-8 font-serif text-6xl leading-[1.05] sm:text-7xl">
-              More than
+              More than a
               <br />
               <span className="italic text-[#D8BD82]">
                 jewellery.
@@ -386,7 +386,7 @@ export default function ComingSoon() {
           >
             mytouchgold@gmail.com
           </a>
-
+jewellery
           <a
             href="https://www.instagram.com/mytouchgold/"
             target="_blank"
