@@ -242,7 +242,7 @@ export default function ComingSoon() {
             className="relative z-10"
           >
             <span className="text-[10px] tracking-[0.4em] text-[#D8BD82]">
-              02 — MORE THAN JEWELLERY
+              02 —  YOUR STYLE
             </span>
 
             <h2 className="mt-8 font-serif text-6xl leading-[1.05] sm:text-7xl">
