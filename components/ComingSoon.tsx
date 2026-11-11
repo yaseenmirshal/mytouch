@@ -92,10 +92,7 @@ export default function ComingSoon() {
             transition={{ delay: 0.7, duration: 1 }}
             className="mt-9 max-w-md text-sm leading-8 text-white/60 md:text-base"
           >
-            A world of timeless elegance is taking shape.
-            Discover exquisite gold, beautiful diamonds
-            and jewellery designed to become part of
-            your most treasured moments.
+           Discover exquisite gold and diamonds through a seamless online shopping experience. Your new jewellery destination is coming soon.
           </motion.p>
 
           <motion.div
