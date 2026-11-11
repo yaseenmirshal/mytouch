@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7f4ed;
+  --foreground: #28251f;
 }
 
 @theme inline {
@@ -12,15 +12,342 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
 }
 
 body {
+  min-height: 100vh;
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.launch-page {
+  --gold: #a77a31;
+  --muted: #827c70;
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0 8.2%;
+  background:
+    radial-gradient(ellipse at 77% 49%, rgb(213 192 147 / 16%), transparent 34%),
+    #f7f4ed;
+}
+
+.launch-header,
+.launch-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.launch-header {
+  min-height: 104px;
+  border-bottom: 1px solid rgb(87 73 47 / 14%);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  width: 35px;
+  height: 35px;
+  place-items: center;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  color: var(--gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  font-style: italic;
+}
+
+.brand-name {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.19em;
+}
+
+.brand-name span {
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.header-note {
+  color: var(--muted);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  font-style: italic;
+}
+
+.launch-content {
+  display: grid;
+  width: min(100%, 1120px);
+  flex: 1;
+  align-items: center;
+  align-self: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 5%;
+  padding: 58px 0 64px;
+}
+
+.launch-copy {
+  position: relative;
+  z-index: 1;
+  padding: 12px 0 20px;
+}
+
+.eyebrow,
+.launch-status,
+.launch-footer {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.19em;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 29px;
+  color: var(--gold);
+}
+
+.eyebrow-line {
+  width: 27px;
+  height: 1px;
+  background: currentColor;
+}
+
+.launch-copy h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(58px, 7.3vw, 100px);
+  font-weight: 400;
+  letter-spacing: -0.065em;
+  line-height: 0.98;
+}
+
+.launch-copy h1 span {
+  color: var(--gold);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.launch-description {
+  max-width: 390px;
+  margin: 28px 0 0;
+  color: #716b60;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.launch-status {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-top: 37px;
+  color: #625a4c;
+  font-size: 9px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #b28a47;
+  box-shadow: 0 0 0 4px rgb(178 138 71 / 13%);
+}
+
+.gold-art {
+  position: relative;
+  display: grid;
+  width: min(100%, 510px);
+  aspect-ratio: 1;
+  place-items: center;
+  justify-self: end;
+}
+
+.art-glow {
+  position: absolute;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(195 157 91 / 22%), transparent 68%);
+  filter: blur(13px);
+}
+
+.art-orbit {
+  position: absolute;
+  border: 1px solid rgb(167 122 49 / 25%);
+  border-radius: 50%;
+}
+
+.art-orbit-outer {
+  width: 91%;
+  height: 91%;
+}
+
+.art-orbit-inner {
+  width: 76%;
+  height: 76%;
+  border-style: dashed;
+  border-color: rgb(167 122 49 / 24%);
+}
+
+.gold-disc {
+  position: relative;
+  display: flex;
+  width: 61%;
+  height: 61%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid rgb(255 255 255 / 62%);
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 32% 24%, rgb(255 250 226 / 95%), transparent 34%),
+    radial-gradient(ellipse at 68% 78%, #a8792e 0%, transparent 58%),
+    linear-gradient(135deg, #f1dda5 4%, #c39b53 45%, #e8cb85 75%, #a67a36 100%);
+  box-shadow:
+    inset 0 0 0 9px rgb(255 247 218 / 21%),
+    inset 0 0 34px rgb(102 65 15 / 20%),
+    0 25px 55px rgb(106 77 30 / 18%),
+    0 5px 12px rgb(106 77 30 / 10%);
+  transform: rotate(-12deg);
+}
+
+.disc-monogram {
+  color: #fff9e9;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(78px, 11vw, 145px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1;
+  text-shadow: 0 2px 12px rgb(104 70 21 / 24%);
+}
+
+.disc-caption {
+  margin-top: -1px;
+  color: rgb(255 249 233 / 85%);
+  font-size: 8px;
+  letter-spacing: 0.27em;
+}
+
+.art-spark {
+  position: absolute;
+  color: #b58b47;
+  font-size: 24px;
+}
+
+.art-spark-one {
+  top: 13%;
+  right: 15%;
+}
+
+.art-spark-two {
+  bottom: 17%;
+  left: 10%;
+  font-size: 16px;
+}
+
+.art-caption {
+  position: absolute;
+  right: -2%;
+  bottom: 20%;
+  color: #807664;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  font-style: italic;
+  transform: rotate(-8deg);
+}
+
+.launch-footer {
+  min-height: 72px;
+  justify-content: flex-start;
+  gap: 18px;
+  border-top: 1px solid rgb(87 73 47 / 14%);
+  color: #817a6e;
+  font-size: 8px;
+  letter-spacing: 0.15em;
+}
+
+.footer-divider {
+  width: 24px;
+  height: 1px;
+  background: #c5bba8;
+}
+
+@media (min-width: 1440px) {
+  .launch-copy h1 {
+    font-size: 104px;
+  }
+}
+
+@media (max-width: 760px) {
+  .launch-page {
+    padding: 0 7%;
+  }
+
+  .launch-header {
+    min-height: 80px;
+  }
+
+  .header-note {
+    font-size: 13px;
+  }
+
+  .launch-content {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 58px 0 38px;
+  }
+
+  .launch-copy h1 {
+    font-size: clamp(62px, 13vw, 88px);
+  }
+
+  .launch-description {
+    max-width: 360px;
+  }
+
+  .gold-art {
+    width: min(88%, 390px);
+    justify-self: center;
+    margin-top: -8px;
+  }
+
+  .launch-footer {
+    min-height: 64px;
+    font-size: 7px;
+    letter-spacing: 0.1em;
+  }
+}
+
+@media (max-width: 390px) {
+  .header-note {
+    font-size: 11px;
+  }
+
+  .brand-name {
+    font-size: 11px;
+  }
+
+  .launch-footer {
+    gap: 10px;
+    font-size: 6px;
+  }
 }
